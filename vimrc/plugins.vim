@@ -23,7 +23,7 @@ let NERDTreeWinSize = 35
 
 " Make sure that when NT root is changed, Vim's pwd is also updated
 let NERDTreeChDirMode = 2
-let NERDTreeShowLineNumbers = 1
+" let NERDTreeShowLineNumbers = 1
 let NERDTreeAutoCenter = 1
 
 " Open NERDTree on startup, when no file has been specified
@@ -33,7 +33,8 @@ autocmd VimEnter * if !argc() | NERDTree | endif
 map <leader>T :NERDTreeFind<cr>
 
 " Toogle on/off
-nmap <leader>o :NERDTreeToggle<cr>
+" nmap <leader>o :NERDTreeToggle<cr>
+nmap <F6> :NERDTreeToggle<cr>
 
 
 "------------------------------------------------------------------------------
@@ -145,8 +146,9 @@ au FileType go nmap <Leader>s <Plug>(go-implements)
 " Show type info for the word under your cursor
 au FileType go nmap <Leader>i <Plug>(go-info)
 
+
 " Open the relevant Godoc for the word under the cursor
-au FileType go nmap <Leader>gd <Plug>(go-doc)
+" au FileType go nmap <Leader>gd <Plug>(go-doc)
 au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
 
 " Open the Godoc in browser
@@ -157,6 +159,7 @@ au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
+au FileType go nmap <F5> <Plug>(go-def)
 
 " By default syntax-highlighting for Functions, Methods and Structs is disabled.
 " Let's enable them!
@@ -192,3 +195,5 @@ let g:tagbar_type_go = {
     \ 'ctagsbin'  : 'gotags',
     \ 'ctagsargs' : '-sort -silent'
 \ }
+
+
